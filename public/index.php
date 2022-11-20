@@ -2,13 +2,17 @@
 
 use Core\Router;
 
-spl_autoload_register(function ($class) {
-    $root = dirname(__DIR__);
-    $file = $root . '/' . str_replace('\\', '/', $class) . '.php';
-    if (is_readable($file)) {
-        require $file;
-    }
-});
+/**
+ * Composer
+ */
+require '../vendor/autoload.php';
+
+/**
+ * Error and Exception handling
+ */
+error_reporting(E_ALL);
+set_error_handler('Core\Error::errorHandler');
+set_exception_handler('Core\Error::exceptionHandler');
 
 /*
  * Routing
