@@ -1,0 +1,10 @@
+*.log
+/.idea
+npm-debug.log
+yarn-error.log
+/vendor
+/temp
+/node_modules
+.env
+.env.backup
+.phpunit.result.cache
