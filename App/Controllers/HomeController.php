@@ -2,14 +2,17 @@
 
 namespace App\Controllers;
 
-
 use Core\Controller;
+use Core\Http\Response;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(): Response
     {
-        echo 'Hello world';
+        return response()->json([
+            'name'    => 'Dave',
+            'colours' => ['red', 'green', 'blue']
+        ]);
     }
 
     public function show($id)
